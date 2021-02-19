@@ -1,83 +1,97 @@
 import * as React from 'react';
-import { guilds } from '../utils/mocks';
+
+import ReactDOM from 'react-dom';
+import './../index.css';
+import App from './../App';
+import reportWebVitals from '../reportWebVitals';
+import {BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { DarkTheme } from './styles/themes';
+import { WhiteTheme } from './styles/themes';
+import {Button} from '@chakra-ui/react'
+
 import { SidebarStyle,
      SidebarHeader,
       IconStyle,
        SidebarContent,
        GuildIcon,
        NewSidebarStyle,
-       SidebarContents
-     } from '../utils/styles';
+       SidebarContents, Button as Buttons, StyledBorder, MenuCategory, MenuCategoryItem, MenuContent, MenuStyle, MenuHeader, DashboardContent, DashboardHeader
+     } from './styles/styles';
 
-import { Guild } from '../utils/types';
+
 
 import logo from '../download.png'
 
 
 import { History } from 'history';
-import { GuildContext } from '../utils/contexts/GuildContexts';
 
-type SidebarProps = {
-    guilds: Guild[];
-    history: History;
-}
 
-export const Sidebar = (props: SidebarProps) => {
-  const {guild, setGuild } = React.useContext(GuildContext);
+
+
+ export function Sidebar() {
+
+    function thr() {
+        ReactDOM.render(
+          <React.StrictMode>
+            <Router>
+              <ThemeProvider theme={WhiteTheme}>
+                <App />
+              </ThemeProvider>
+            </Router>
+          </React.StrictMode>,
+          document.getElementById('root')
+        );
+      }
+
+      function thh() {
+        ReactDOM.render(
+          <React.StrictMode>
+            <Router>
+              <ThemeProvider theme={DarkTheme}>
+                <App />
+              </ThemeProvider>
+            </Router>
+          </React.StrictMode>,
+          document.getElementById('root')
+        );
+      }
+
+
   const login = () => window.location.href = 'http://localhost:3001/api/auth/discord/redirect';
 
-
-  if(!guild) return (
-      <SidebarStyle>
-      <NewSidebarStyle>
-          <SidebarHeader>
-              <IconStyle onClick={login}></IconStyle>
-          </SidebarHeader>
-          <SidebarContents> 
-              <h1>S</h1>
-              <h1>E</h1>
-              <h1>R</h1>
-              <h1>V</h1>
-              <h1>E</h1>
-              <h1>R</h1>
-              <h1>S</h1>
-              <br></br>
-              <h1>A</h1>
-              <h1>P</h1>
-              <h1>P</h1>
-              <h1>E</h1>
-              <h1>A</h1>
-              <h1>R</h1>
-              <br></br>
-              <h1>A</h1>
-              <h1>F</h1>
-              <h1>T</h1>
-              <h1>E</h1>
-              <h1>R</h1>
-              <br></br>
-              <h1>L</h1>
-              <h1>O</h1>
-              <h1>G</h1>
-              <h1>I</h1>
-              <h1>N</h1>
-          </SidebarContents>
-      </NewSidebarStyle>
-      </SidebarStyle>
-  )
-
   return (
-  <NewSidebarStyle>
-      <SidebarHeader>
-          <IconStyle onClick={login}></IconStyle>
-      </SidebarHeader>
-      <SidebarContent>
-          {props.guilds.map((guild) => (
-              <GuildIcon key={guild.id} onClick={() => { 
-                  setGuild(guild);
-                  props.history.push(`/dashboard/${guild.id}`)
-              }}/>
-          ))}        
-      </SidebarContent>
-  </NewSidebarStyle>
-  );
-};
+    <SidebarStyle>
+    <NewSidebarStyle>
+        <SidebarHeader>
+            <IconStyle onClick={login}></IconStyle>
+        </SidebarHeader>
+        <SidebarContents> 
+            <h1>Login</h1>
+           <br></br>
+            <br></br>
+            <br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+
+            <StyledBorder>
+                <h1>Themes</h1>
+            <Buttons onClick={thr}>White
+            </Buttons>
+            <Buttons onClick={thh}>Dark</Buttons>
+            </StyledBorder>
+        </SidebarContents>
+    </NewSidebarStyle>
+    <MenuStyle>
+    <MenuHeader>
+        Pls
+    </MenuHeader>
+    <MenuContent>
+        GO to sodjaisdia
+    </MenuContent>
+</MenuStyle>
+
+    </SidebarStyle>
+    
+
+  )
+ }

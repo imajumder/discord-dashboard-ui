@@ -1,46 +1,44 @@
 import styled, { ThemeProvider, css } from "styled-components";
 
-import image from '.././pages/download.png'
-import Img from '../New.jpg'
+import image from './download.png'
 
 
 export const SidebarStyle = styled.aside`
-  width: 100px;
-  background-color: ${({ theme }) => theme.base.sidebar};
-  color: ${({ theme }) => theme.text.main};
-  height: 100%;
-  font-family: "Titillium Web";
-  box-sizing: border-box;
-  position: fixed;
-  overflow: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+width: 110px;
+background-color: ${({ theme }) => theme.base.sidebar};
+color: ${({ theme }) => theme.text.main};
+height: 100%;
+font-family: "Titillium Web";
+box-sizing: border-box;
+position: fixed;
+overflow: scroll;
+::-webkit-scrollbar {
+  display: none;
+}
 `;
 
 export const NewSidebarStyle = styled.aside`
-  width: 100px;
+  width: 105px;
   background-color: ${({ theme }) => theme.base.sidebar};
   color: ${({ theme }) => theme.text.main};
   height: 100%;
   font-family: "Titillium Web";
   box-sizing: border-box;
   position: fixed;
-  overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
   }
 `;
 
 export const MenuStyle = styled.aside`
-  width: 350px;
+  width: 2000px;
   background-color: ${({ theme }) => theme.base.menu};
   color: ${({ theme }) => theme.text.main};
   height: 100%;
   font-family: "Titillium Web";
   box-sizing: border-box;
   position: fixed;
-  margin-left: 100px;
+  margin-left: 110px;
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -96,7 +94,7 @@ export const SidebarHeader = styled(BaseHeader)`
 
 
 export const IconStyle = styled.img.attrs(props => ({
-  src: image || Img,
+  src: image
 }))`
   height: 60px;
   width: 60px;
@@ -248,11 +246,15 @@ export const DropdownFooter = styled.footer`
 
 export const Button = styled.button`
   font-family: "Titillium Web";
-  padding: 5px 12px;
+  width: 80px;
+  height: 30px;
+  padding: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   background-color: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: ${({ theme }) => theme.padding.border};
   outline: none;
-  color: white;
+  color:  ${({ theme }) => theme.text.main};
   border-radius: 5px;
   transition: 100ms;
   :hover {
@@ -266,6 +268,16 @@ export const Button = styled.button`
     background-color: #919191;
     border: none;
   }
+`;
+
+export const StyledBorder = styled.div`
+border: ${({ theme }) => theme.padding.border};
+padding: 1px;
+background-color: inherit;
+border-radius: 5px;
+transition: 100ms;
+margin-left: 2px;
+
 `;
 
 export const Input = styled.input`
