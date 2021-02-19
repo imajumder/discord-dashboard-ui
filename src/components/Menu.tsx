@@ -1,11 +1,7 @@
 import { MenuStyle,
     MenuHeader,
     MenuContent,
-    SidebarContents,
-    MenuCategory,
-    MenuCategoryItem,
-    Buttons,
-    BasePageStyle,
+    
      } from './styles/styles';
 
 import {History} from 'history';

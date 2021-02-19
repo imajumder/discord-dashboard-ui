@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 export function getUserDetails() {
-    return axios.get('http://localhost:3001/api/auth', {
+    return axios.get('https://latestd.herokuapp.com/api/auth', {
         withCredentials: true,
     });
 }   
 
 export function getGuilds() {
-    return axios.get('http://localhost:3001/api/discord/guilds', {
+    return axios.get('https://latestd.herokuapp.com/api/discord/guilds', {
         withCredentials: true,
     });
 }

@@ -4,7 +4,7 @@ import image from './download.png'
 
 
 export const SidebarStyle = styled.aside`
-width: 110px;
+width: 115px;
 background-color: ${({ theme }) => theme.base.sidebar};
 color: ${({ theme }) => theme.text.main};
 height: 100%;
@@ -64,6 +64,8 @@ export const BaseHeader = styled.header`
   box-shadow: 0px 1px 25px 0px rgba(0, 0, 0, 0.25);
   font-family: Titillium Web;
   font-weight: Bold;
+  width: 110px;
+  background-color: ${({theme}) => theme.base.newmenu};
 
   display: flex;
   align-items: center;
@@ -77,12 +79,15 @@ export const MenuHeader = styled(BaseHeader)`
   font-family: Titillium Web;
   font-weight: Bold;
 
-  background-color: inherit;
+  background-color: ${({theme}) => theme.base.sidebar};
   width: 100%;
   :hover {
     cursor: pointer;
   }
 `;
+
+
+
 
 export const DashboardHeader = styled(BaseHeader)`
   padding: 25px;
@@ -250,7 +255,7 @@ export const Button = styled.button`
   height: 30px;
   padding: 1px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background-color: inherit;
   border: ${({ theme }) => theme.padding.border};
   outline: none;
@@ -288,4 +293,24 @@ export const Input = styled.input`
   border-radius: 5px;
   background-color: inherit;
   color: white;
+`;
+export const NewMenuHeader = styled.button`
+  padding: 1px;
+  height: 40px;
+  position: fixed;
+  font-size; 20px;
+  text-align: center;
+  margin-left: 1625px;
+  font-family: Titillium Web;
+  border-radius: 50px;
+  font-weight: Bold;
+  border:  ${({ theme }) => theme.padding.border};
+  color:  ${({ theme }) => theme.text.main};
+
+  background-color: ${({ theme }) => theme.padding.activeborder};
+  width: 135px;
+  :hover {
+    cursor: pointer;
+    background-color: #DCE0E6;
+  }
 `;

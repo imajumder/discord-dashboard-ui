@@ -8,15 +8,14 @@ import {BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme } from './styles/themes';
 import { WhiteTheme } from './styles/themes';
-import {Button} from '@chakra-ui/react'
+import {Button} from '@chakra-ui/react';
+import Particles from 'react-tsparticles';
 
 import { SidebarStyle,
      SidebarHeader,
       IconStyle,
-       SidebarContent,
-       GuildIcon,
        NewSidebarStyle,
-       SidebarContents, Button as Buttons, StyledBorder, MenuCategory, MenuCategoryItem, MenuContent, MenuStyle, MenuHeader, DashboardContent, DashboardHeader
+       SidebarContents, Button as Buttons, StyledBorder, MenuContent, MenuStyle, MenuHeader, NewMenuHeader
      } from './styles/styles';
 
 
@@ -59,6 +58,8 @@ import { History } from 'history';
 
 
   const login = () => window.location.href = 'http://localhost:3001/api/auth/discord/redirect';
+  const login1 = () => window.location.href = 'http://localhost:3001/dashboard';
+
 
   return (
     <SidebarStyle>
@@ -83,13 +84,13 @@ import { History } from 'history';
     </NewSidebarStyle>
     <MenuStyle>
     <MenuHeader>
-        Pls
+      <NewMenuHeader onClick={login1}>
+        Dashboard</NewMenuHeader>        
     </MenuHeader>
     <MenuContent>
         GO to sodjaisdia
     </MenuContent>
 </MenuStyle>
-
     </SidebarStyle>
     
 
