@@ -3,13 +3,10 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './../index.css';
 import App from './../App';
-import reportWebVitals from '../reportWebVitals';
 import {BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme } from './styles/themes';
 import { WhiteTheme } from './styles/themes';
-import {Button} from '@chakra-ui/react';
-import Particles from 'react-tsparticles';
 
 import { SidebarStyle,
      SidebarHeader,
@@ -18,12 +15,6 @@ import { SidebarStyle,
        SidebarContents, Button as Buttons, StyledBorder, MenuContent, MenuStyle, MenuHeader, NewMenuHeader
      } from './styles/styles';
 
-
-
-import logo from '../download.png'
-
-
-import { History } from 'history';
 
 
 

@@ -6,7 +6,7 @@ import {getUserDetails, getGuilds} from '../../utils/api'
 export function MenuPage( {
     history,
 }) {
-    const [user, setUser] = React.useState(null);
+    const [setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
     const [guilds, setGuilds] = React.useState([]);
 
