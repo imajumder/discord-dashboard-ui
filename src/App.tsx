@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Button } from '@chakra-ui/react';
 import { Switch, Route, useHistory} from 'react-router-dom';
 import {LandingPage, MenuPage, DashboardPage} from './pages';
 import {Sidebar} from './components/Sidebar'
