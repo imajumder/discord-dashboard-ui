@@ -1,4 +1,4 @@
-import styled, { ThemeProvider, css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import image from './download.png'
 

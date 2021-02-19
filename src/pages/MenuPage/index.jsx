@@ -3,10 +3,8 @@ import { MenuWrapper } from '../../components';
 
 import {getUserDetails, getGuilds} from '../../utils/api'
 
-export function MenuPage( {
-    history,
-}) {
-    const [setUser] = React.useState(null);
+export function MenuPage({history}) {
+    const [user, setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
     const [guilds, setGuilds] = React.useState([]);
 
